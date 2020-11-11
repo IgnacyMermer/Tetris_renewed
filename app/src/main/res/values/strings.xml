@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Tetris</string>
+    <string-array name="plansze">
+        <item>10x20</item>
+        <item>12x24</item>
+        <item>14x28</item>
+        <item>16x32</item>
+    </string-array>
+</resources>

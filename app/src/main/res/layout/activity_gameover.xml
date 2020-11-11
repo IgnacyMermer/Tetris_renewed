@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo2">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="@android:color/black"
+        android:text="Twój wynik:"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:id="@+id/wynikTekst"
+        android:layout_marginTop="20dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/wynikTekst"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:id="@+id/wynikPole"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:textColor="@android:color/black"
+        android:layout_below="@id/wynikPole"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:id="@+id/wynikRekord"/>
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="200dp"
+        android:gravity="center_horizontal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_below="@id/wynikPole"
+        android:layout_height="wrap_content" >
+    </Spinner>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/spinner2"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:text="Rozpocznij ponownie"
+        android:id="@+id/buttonRozpocznijPonownie"/>
+
+</RelativeLayout>
