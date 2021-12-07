@@ -16,10 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".pauza"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".Gameover"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
     </application>
 
 </manifest>
