@@ -58,23 +58,14 @@ public class Square {
                 .setBackgroundResource(R.drawable.bloczek);
     }
 
-    static void colorTheBorder(List<TextView> lista, int numberOfColumns ){
-        if((Positions.positionY > 0 && Positions.positionX >0) || (Positions.positionY >1)){
-            lista.get((Positions.positionY * numberOfColumns + Positions.positionX - numberOfColumns)).setBackgroundResource(0);
-            lista.get((Positions.positionY * numberOfColumns + Positions.positionX - numberOfColumns +1)).setBackgroundResource(0);
-        }
-        lista.get((Positions.positionY * numberOfColumns + Positions.positionX)).setBackgroundResource(R.drawable.zolty);
-        lista.get((Positions.positionY * numberOfColumns + Positions.positionX +1)).setBackgroundResource(R.drawable.zolty);
-        lista.get((Positions.positionY * numberOfColumns + Positions.positionX + numberOfColumns)).setBackgroundResource(R.drawable.zolty);
-        lista.get((Positions.positionY * numberOfColumns + Positions.positionX + numberOfColumns +1)).setBackgroundResource(R.drawable.zolty);
-    }
-
     static void onRightBtn(List<TextView> lista){
         if(Positions.positionXBlock<8) {
 
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock).setBackgroundResource(0);
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
                     .setBackgroundResource(0);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2))
+                    .setBackgroundResource(R.drawable.zolty);
             lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2))
                     .setBackgroundResource(R.drawable.zolty);
 
@@ -88,6 +79,8 @@ public class Square {
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1).setBackgroundResource(0);
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
                     .setBackgroundResource(0);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1))
+                    .setBackgroundResource(R.drawable.zolty);
             lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns - 1))
                     .setBackgroundResource(R.drawable.zolty);
 
@@ -143,6 +136,28 @@ public class Square {
         lista.get((lastYBlockPosition * Constants.numberOfColumns +
                 Positions.positionXBlock + Constants.numberOfColumns + 1))
                 .setBackgroundResource(R.drawable.zolty);
+    }
+
+    static boolean canMove(List<TextView> lista){
+        if(Positions.positionYBlock < 18 && lista.get((Positions.positionYBlock + 2) * Constants.numberOfColumns
+                + Positions.positionXBlock).getBackground() == null && lista.get((Positions.positionYBlock + 2) *
+                Constants.numberOfColumns + Positions.positionXBlock + 1).getBackground() == null){
+
+            return true;
+        }
+
+        return false;
+    }
+
+    static boolean isGameOver(List<TextView> lista){
+        if(Positions.positionYBlock < 4 && lista.get((Positions.positionYBlock + 2) * Constants.numberOfColumns
+                + Positions.positionXBlock).getBackground() != null && lista.get((Positions.positionYBlock + 2) *
+                Constants.numberOfColumns + Positions.positionXBlock + 1).getBackground() != null ){
+
+            return true;
+        }
+
+        return false;
     }
 
 }

@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     int boardWidth, boardHeight, width, height, timeOfMotion = 350;
 
+    long t = 0;
+
     ArrayList<TextView> lista;
 
     int lastYBlockPosition = Positions.positionYBlock;
@@ -52,29 +54,45 @@ public class MainActivity extends AppCompatActivity {
                         while(!isGameOver) {
 
                             while (isBlockGoing) {
-                                long t = System.currentTimeMillis() + timeOfMotion;
-                                while (t > System.currentTimeMillis()) {
+                                t = System.currentTimeMillis() + timeOfMotion;
+                                while (t > System.currentTimeMillis()) { }
+
+                                if(Positions.actualBlockNumber == 0){
+
+                                    if(Square.isGameOver(lista)){
+                                        isGameOver = true;
+                                    }
+
+                                    else if (Square.canMove(lista)) {
+                                        Positions.positionYBlock++;
+                                    }
+
+                                    else if(Positions.positionYBlock < 4){
+                                        Positions.positionYBlock++;
+                                    }
+
+                                    else{
+                                        isBlockGoing=false;
+                                    }
+
                                 }
 
-                                if(Positions.positionYBlock < 4 && lista.get((Positions.positionYBlock + 2) * Constants.numberOfColumns
-                                        + Positions.positionXBlock).getBackground() != null && lista.get((Positions.positionYBlock + 2) *
-                                        Constants.numberOfColumns + Positions.positionXBlock + 1).getBackground() != null ){
-                                    isGameOver = true;
-                                }
+                                else if(Positions.actualBlockNumber == 1){
+                                    if(Rectangle.isGameOver(lista)){
+                                        isGameOver = true;
+                                    }
 
-                                else if (Positions.positionYBlock < 18 && lista.get((Positions.positionYBlock + 2) * Constants.numberOfColumns
-                                        + Positions.positionXBlock).getBackground() == null && lista.get((Positions.positionYBlock + 2) *
-                                        Constants.numberOfColumns + Positions.positionXBlock + 1).getBackground() == null) {
+                                    else if (Rectangle.canMove(lista)) {
+                                        Positions.positionYBlock++;
+                                    }
 
-                                    Positions.positionYBlock++;
-                                }
+                                    else if(Positions.positionYBlock < 4){
+                                        Positions.positionYBlock++;
+                                    }
 
-                                else if(Positions.positionYBlock < 4){
-                                    Positions.positionYBlock++;
-                                }
-
-                                else{
-                                    isBlockGoing=false;
+                                    else{
+                                        isBlockGoing=false;
+                                    }
                                 }
 
 
@@ -89,19 +107,28 @@ public class MainActivity extends AppCompatActivity {
                                             Square.clearAndColorFields(lista, lastYBlockPosition, lastXBlockPosition);
                                         }
 
+                                        else if(Positions.actualBlockNumber == 1){
+                                            Rectangle.clearAndColorFields(lista, lastYBlockPosition, lastXBlockPosition);
+                                        }
 
                                     }
                                 });
                             }
+
+                            System.out.println(Math.random());
+
+                            Positions.actualBlockNumber = (int)Math.round(Math.random());
+
+                            isBlockGoing=true;
                             Positions.positionXBlock = 0;
-                            Positions.positionYBlock = 0;
+                            Positions.positionYBlock = 2;
                             Positions.positionX = 0;
                             Positions.positionY = 0;
                             Positions.tempPositionY = 50;
                             Positions.tempPositionY = 10;
                             lastXBlockPosition = 0;
-                            lastYBlockPosition = 0;
-                            isBlockGoing=true;
+                            lastYBlockPosition = 2;
+
 
                         }
 
@@ -119,9 +146,13 @@ public class MainActivity extends AppCompatActivity {
                 switch (Positions.actualBlockNumber){
                     case 0:
                         Square.onRightBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
+                        break;
+                    case 1:
+                        Rectangle.onRightBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
                         break;
                 }
-
             }
         });
 
@@ -131,6 +162,11 @@ public class MainActivity extends AppCompatActivity {
                 switch (Positions.actualBlockNumber){
                     case 0:
                         Square.onLeftBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
+                        break;
+                    case 1:
+                        Rectangle.onLeftBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
                         break;
                 }
 
@@ -143,6 +179,9 @@ public class MainActivity extends AppCompatActivity {
                 switch (Positions.actualBlockNumber){
                     case 0:
                         Square.onBottomBtn(lista);
+                        break;
+                    case 1:
+                        Rectangle.onBottomBtn(lista);
                         break;
                 }
 
