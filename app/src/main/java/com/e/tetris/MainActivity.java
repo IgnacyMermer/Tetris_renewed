@@ -13,6 +13,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -111,15 +112,29 @@ public class MainActivity extends AppCompatActivity {
                                             Rectangle.clearAndColorFields(lista, lastYBlockPosition, lastXBlockPosition);
                                         }
 
+                                        for(int i = Constants.numberOfRows - 1; i > 10; i--){
+                                            boolean temp = true;
+                                            for(int j = 0; j < Constants.numberOfColumns; j++){
+                                                if(lista.get(i * Constants.numberOfColumns + j).getBackground() == null){
+                                                    temp = false;
+                                                    break;
+                                                }
+                                            }
+                                            if(temp){
+                                                for(int j = 0; j < Constants.numberOfColumns; j++){
+
+                                                    lista.get(i * Constants.numberOfColumns + j).setBackgroundResource(0);
+
+                                                }
+                                            }
+                                        }
+
                                     }
                                 });
                             }
 
-                            System.out.println(Math.random());
 
-                            Positions.actualBlockNumber = (int)Math.round(Math.random());
 
-                            isBlockGoing=true;
                             Positions.positionXBlock = 0;
                             Positions.positionYBlock = 2;
                             Positions.positionX = 0;
@@ -128,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
                             Positions.tempPositionY = 10;
                             lastXBlockPosition = 0;
                             lastYBlockPosition = 2;
+
+                            Positions.actualBlockNumber = (int)Math.round(Math.random());
+                            Positions.actualRotation = 0;
+                            isBlockGoing=true;
 
 
                         }
@@ -186,6 +205,19 @@ public class MainActivity extends AppCompatActivity {
                 }
 
 
+            }
+        });
+
+        rotateBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (Positions.actualBlockNumber){
+                    case 0:
+                        break;
+                    case 1:
+                        Rectangle.rotate(lista);
+                        break;
+                }
             }
         });
 

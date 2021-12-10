@@ -106,6 +106,16 @@ public class Square {
         lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock).setBackgroundResource(0);
         lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1).setBackgroundResource(0);
 
+        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 2 * Constants.numberOfColumns)
+                .setBackgroundResource(R.drawable.zolty);
+        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 2 * Constants.numberOfColumns + 1)
+                .setBackgroundResource(R.drawable.zolty);
+        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                .setBackgroundResource(R.drawable.zolty);
+        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                .setBackgroundResource(R.drawable.zolty);
+
+
         Positions.positionYBlock = tempYPosition;
     }
 
