@@ -96,6 +96,24 @@ public class MainActivity extends AppCompatActivity {
                                     }
                                 }
 
+                                else if(Positions.actualBlockNumber == 2){
+                                    if(BlockT.isGameOver(lista)){
+                                        isGameOver = true;
+                                    }
+
+                                    else if (BlockT.canMove(lista)) {
+                                        Positions.positionYBlock++;
+                                    }
+
+                                    else if(Positions.positionYBlock < 4){
+                                        Positions.positionYBlock++;
+                                    }
+
+                                    else{
+                                        isBlockGoing=false;
+                                    }
+                                }
+
 
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -112,6 +130,10 @@ public class MainActivity extends AppCompatActivity {
                                             Rectangle.clearAndColorFields(lista, lastYBlockPosition, lastXBlockPosition);
                                         }
 
+                                        else if(Positions.actualBlockNumber == 2){
+                                            BlockT.clearAndColorFields(lista, lastYBlockPosition, lastXBlockPosition);
+                                        }
+
                                         for(int i = Constants.numberOfRows - 1; i > 10; i--){
                                             boolean temp = true;
                                             for(int j = 0; j < Constants.numberOfColumns; j++){
@@ -121,10 +143,13 @@ public class MainActivity extends AppCompatActivity {
                                                 }
                                             }
                                             if(temp){
-                                                for(int j = 0; j < Constants.numberOfColumns; j++){
+                                                for(int x = Constants.numberOfRows - 1; x>11; x--){
+                                                    for(int j = 0; j < Constants.numberOfColumns; j++){
 
-                                                    lista.get(i * Constants.numberOfColumns + j).setBackgroundResource(0);
+                                                        lista.get(x * Constants.numberOfColumns + j).setBackground(
+                                                            lista.get((x-1) * Constants.numberOfColumns + j).getBackground());
 
+                                                    }
                                                 }
                                             }
                                         }
@@ -144,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                             lastXBlockPosition = 0;
                             lastYBlockPosition = 2;
 
-                            Positions.actualBlockNumber = (int)Math.round(Math.random());
+                            Positions.actualBlockNumber = (int)Math.round(Math.random() * 2);
                             Positions.actualRotation = 0;
                             isBlockGoing=true;
 
@@ -171,6 +196,10 @@ public class MainActivity extends AppCompatActivity {
                         Rectangle.onRightBtn(lista);
                         t = System.currentTimeMillis()+timeOfMotion;
                         break;
+                    case 2:
+                        BlockT.onRightBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
+                        break;
                 }
             }
         });
@@ -185,6 +214,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 1:
                         Rectangle.onLeftBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
+                        break;
+                    case 2:
+                        BlockT.onLeftBtn(lista);
                         t = System.currentTimeMillis()+timeOfMotion;
                         break;
                 }
@@ -217,6 +250,8 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         Rectangle.rotate(lista);
                         break;
+                    case 2:
+                        BlockT.rotate(lista);
                 }
             }
         });
