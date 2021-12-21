@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
 
                                     else{
-                                        isBlockGoing=false;
+                                        isBlockGoing = false;
                                     }
 
                                 }
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
 
                                     else{
-                                        isBlockGoing=false;
+                                        isBlockGoing = false;
                                     }
                                 }
 
@@ -110,7 +110,25 @@ public class MainActivity extends AppCompatActivity {
                                     }
 
                                     else{
-                                        isBlockGoing=false;
+                                        isBlockGoing = false;
+                                    }
+                                }
+
+                                else if(Positions.actualBlockNumber == 3){
+                                    if(BlockL.isGameOver(lista)){
+                                        isGameOver = true;
+                                    }
+
+                                    else if (BlockL.canMove(lista)) {
+                                        Positions.positionYBlock++;
+                                    }
+
+                                    else if(Positions.positionYBlock < 4){
+                                        Positions.positionYBlock++;
+                                    }
+
+                                    else{
+                                        isBlockGoing = false;
                                     }
                                 }
 
@@ -134,6 +152,10 @@ public class MainActivity extends AppCompatActivity {
                                             BlockT.clearAndColorFields(lista, lastYBlockPosition, lastXBlockPosition);
                                         }
 
+                                        else if(Positions.actualBlockNumber == 3){
+                                            BlockL.clearAndColorFields(lista, lastYBlockPosition, lastXBlockPosition);
+                                        }
+
                                         for(int i = Constants.numberOfRows - 1; i > 10; i--){
                                             boolean temp = true;
                                             for(int j = 0; j < Constants.numberOfColumns; j++){
@@ -143,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
                                                 }
                                             }
                                             if(temp){
-                                                for(int x = Constants.numberOfRows - 1; x>11; x--){
+                                                for(int x = i; x>11; x--){
                                                     for(int j = 0; j < Constants.numberOfColumns; j++){
 
                                                         lista.get(x * Constants.numberOfColumns + j).setBackground(
@@ -158,10 +180,8 @@ public class MainActivity extends AppCompatActivity {
                                 });
                             }
 
-
-
                             Positions.positionXBlock = 0;
-                            Positions.positionYBlock = 2;
+                            Positions.positionYBlock = 3;
                             Positions.positionX = 0;
                             Positions.positionY = 0;
                             Positions.tempPositionY = 50;
@@ -169,7 +189,7 @@ public class MainActivity extends AppCompatActivity {
                             lastXBlockPosition = 0;
                             lastYBlockPosition = 3;
 
-                            Positions.actualBlockNumber = (int)Math.round(Math.random() * 2);
+                            Positions.actualBlockNumber = (int)Math.round(Math.random() * 3);
                             Positions.actualRotation = 0;
                             isBlockGoing=true;
 

@@ -6,6 +6,6 @@ public class Positions {
 
     static int positionYBlock=3, positionXBlock=0;
 
-    static int actualBlockNumber = 2, actualRotation = 0;
+    static int actualBlockNumber = 3, actualRotation = 0;
 
 }
