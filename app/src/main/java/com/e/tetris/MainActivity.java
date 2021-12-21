@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                             Positions.tempPositionY = 50;
                             Positions.tempPositionY = 10;
                             lastXBlockPosition = 0;
-                            lastYBlockPosition = 2;
+                            lastYBlockPosition = 3;
 
                             Positions.actualBlockNumber = (int)Math.round(Math.random() * 2);
                             Positions.actualRotation = 0;
@@ -235,6 +235,8 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         Rectangle.onBottomBtn(lista);
                         break;
+                    case 2:
+                        BlockT.onBottomBtn(lista);
                 }
 
 
