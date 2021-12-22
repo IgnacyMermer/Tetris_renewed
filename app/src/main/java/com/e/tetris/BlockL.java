@@ -26,13 +26,13 @@ public class BlockL {
             }
 
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition)
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition - Constants.numberOfColumns)
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns)
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
         }
 
         else if(Positions.actualRotation == 1){
@@ -52,13 +52,13 @@ public class BlockL {
             }
 
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + 1))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + 2))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
         }
 
         else if(Positions.actualRotation == 2){
@@ -78,13 +78,13 @@ public class BlockL {
             }
 
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
         }
 
         else if(Positions.actualRotation == 3){
@@ -104,13 +104,13 @@ public class BlockL {
             }
 
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + 2))
-                    .setBackgroundResource(R.drawable.turkusowy);
+                    .setBackgroundResource(R.drawable.pomaranczowy);
         }
 
     }
@@ -156,6 +156,247 @@ public class BlockL {
 
     static boolean isGameOver(List<TextView> lista){
         return false;
+    }
+
+    static void onRightBtn(List<TextView> lista){
+
+        if(Positions.actualRotation == 0 && Positions.positionXBlock < 8 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                + Constants.numberOfColumns + 2).getBackground()==null) {
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+
+            Positions.positionXBlock++;
+
+        }
+
+        else if(Positions.actualRotation == 1 && Positions.positionXBlock < 7 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 3)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                + Constants.numberOfColumns + 1).getBackground()==null){
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 3))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+
+            Positions.positionXBlock++;
+        }
+
+        else if(Positions.actualRotation == 2 && Positions.positionXBlock < 8 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                - Constants.numberOfColumns + 1).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
+                Positions.positionXBlock).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
+                Positions.positionXBlock + Constants.numberOfColumns).getBackground()==null){
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock -Constants.numberOfColumns + 2))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+
+            Positions.positionXBlock++;
+        }
+
+        else if(Positions.actualRotation == 3 && Positions.positionXBlock < 7 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                + Constants.numberOfColumns + 1).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns
+                + Positions.positionXBlock + Constants.numberOfColumns + 2).getBackground()==null && lista.get(Positions.positionYBlock
+                * Constants.numberOfColumns + Positions.positionXBlock + 2).getBackground()==null){
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 3))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 3))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+            Positions.positionXBlock++;
+        }
+
+    }
+
+    static void onLeftBtn(List<TextView> lista){
+
+        if(Positions.actualRotation == 0 && Positions.positionXBlock > 0 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns - 1)
+                        .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                + Constants.numberOfColumns - 1).getBackground()==null) {
+
+            System.out.println("in if");
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+
+            Positions.positionXBlock--;
+
+        }
+
+        else if(Positions.actualRotation == 1 && Positions.positionXBlock > 0 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                + Constants.numberOfColumns - 1).getBackground()==null){
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+
+            Positions.positionXBlock--;
+        }
+
+        else if(Positions.actualRotation == 2 && Positions.positionXBlock > 0 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                - Constants.numberOfColumns - 1).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
+                Positions.positionXBlock - 1).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
+                Positions.positionXBlock + Constants.numberOfColumns - 1).getBackground()==null){
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock -Constants.numberOfColumns))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+
+            Positions.positionXBlock--;
+        }
+
+        else if(Positions.actualRotation == 3 && Positions.positionXBlock < 7 &&
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1)
+                .getBackground()==null){
+
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
+                    .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
+                    .setBackgroundResource(0);
+
+
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns - 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+
+            Positions.positionXBlock--;
+        }
+
     }
 
 }

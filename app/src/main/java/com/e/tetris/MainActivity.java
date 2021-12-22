@@ -220,6 +220,10 @@ public class MainActivity extends AppCompatActivity {
                         BlockT.onRightBtn(lista);
                         t = System.currentTimeMillis()+timeOfMotion;
                         break;
+                    case 3:
+                        BlockL.onRightBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
+                        break;
                 }
             }
         });
@@ -238,6 +242,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         BlockT.onLeftBtn(lista);
+                        t = System.currentTimeMillis()+timeOfMotion;
+                        break;
+                    case 3:
+                        BlockL.onLeftBtn(lista);
                         t = System.currentTimeMillis()+timeOfMotion;
                         break;
                 }
