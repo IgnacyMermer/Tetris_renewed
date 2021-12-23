@@ -282,6 +282,10 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         BlockT.rotate(lista);
+                        break;
+                    case 3:
+                        BlockL.rotate(lista);
+                        break;
                 }
             }
         });
