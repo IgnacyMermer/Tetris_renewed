@@ -185,7 +185,7 @@ public class Rectangle {
         int tempYPosition = Positions.positionYBlock;
 
         if(Positions.actualRotation == 0){
-            while((tempYPosition < 17 && lista.get((tempYPosition + 3) * Constants.numberOfColumns
+            while((tempYPosition < 18 && lista.get((tempYPosition + 2) * Constants.numberOfColumns
                     + Positions.positionXBlock).getBackground() == null)||tempYPosition<4){
 
                 tempYPosition++;
@@ -200,20 +200,21 @@ public class Rectangle {
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
                     .setBackgroundResource(0);
 
-            lista.get((tempYPosition + 2) * Constants.numberOfColumns + Positions.positionXBlock).setBackgroundResource(R.drawable.rozowy);
-            lista.get((tempYPosition + 1) * Constants.numberOfColumns + Positions.positionXBlock)
+            lista.get((tempYPosition - 2) * Constants.numberOfColumns + Positions.positionXBlock)
+                    .setBackgroundResource(R.drawable.rozowy);
+            lista.get((tempYPosition - 1) * Constants.numberOfColumns + Positions.positionXBlock)
                     .setBackgroundResource(R.drawable.rozowy);
             lista.get((tempYPosition) * Constants.numberOfColumns + Positions.positionXBlock)
                     .setBackgroundResource(R.drawable.rozowy);
-            lista.get((tempYPosition - 1) * Constants.numberOfColumns + Positions.positionXBlock)
+            lista.get((tempYPosition + 1) * Constants.numberOfColumns + Positions.positionXBlock)
                     .setBackgroundResource(R.drawable.rozowy);
         }
 
         else{
-            while((tempYPosition < 17 && lista.get((tempYPosition + 3) * Constants.numberOfColumns
-                    + Positions.positionXBlock).getBackground() == null  && lista.get((tempYPosition + 3) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 1).getBackground() == null  && lista.get((tempYPosition + 3) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 2).getBackground() == null  && lista.get((tempYPosition + 3) * Constants.numberOfColumns
+            while((tempYPosition < 18 && lista.get((tempYPosition + 2) * Constants.numberOfColumns
+                    + Positions.positionXBlock).getBackground() == null  && lista.get((tempYPosition + 2) * Constants.numberOfColumns
+                    + Positions.positionXBlock + 1).getBackground() == null  && lista.get((tempYPosition + 2) * Constants.numberOfColumns
+                    + Positions.positionXBlock + 2).getBackground() == null  && lista.get((tempYPosition + 2) * Constants.numberOfColumns
                     + Positions.positionXBlock + 3).getBackground() == null)||tempYPosition<4){
 
                 tempYPosition++;
@@ -228,12 +229,12 @@ public class Rectangle {
             lista.get((Positions.positionYBlock + 1) * Constants.numberOfColumns + Positions.positionXBlock + 3)
                     .setBackgroundResource(0);
 
-            lista.get((tempYPosition + 2) * Constants.numberOfColumns + Positions.positionXBlock).setBackgroundResource(R.drawable.rozowy);
-            lista.get((tempYPosition + 2) * Constants.numberOfColumns + Positions.positionXBlock + 1)
+            lista.get((tempYPosition + 1) * Constants.numberOfColumns + Positions.positionXBlock).setBackgroundResource(R.drawable.rozowy);
+            lista.get((tempYPosition + 1) * Constants.numberOfColumns + Positions.positionXBlock + 1)
                     .setBackgroundResource(R.drawable.rozowy);
-            lista.get((tempYPosition + 2) * Constants.numberOfColumns + Positions.positionXBlock + 2)
+            lista.get((tempYPosition + 1) * Constants.numberOfColumns + Positions.positionXBlock + 2)
                     .setBackgroundResource(R.drawable.rozowy);
-            lista.get((tempYPosition + 2) * Constants.numberOfColumns + Positions.positionXBlock + 3)
+            lista.get((tempYPosition + 1) * Constants.numberOfColumns + Positions.positionXBlock + 3)
                     .setBackgroundResource(R.drawable.rozowy);
         }
 

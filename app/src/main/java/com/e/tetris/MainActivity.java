@@ -58,84 +58,86 @@ public class MainActivity extends AppCompatActivity {
                                 t = System.currentTimeMillis() + timeOfMotion;
                                 while (t > System.currentTimeMillis()) { }
 
-                                if(Positions.actualBlockNumber == 0){
 
-                                    if(Square.isGameOver(lista)){
-                                        isGameOver = true;
-                                    }
-
-                                    else if (Square.canMove(lista)) {
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else if(Positions.positionYBlock < 4){
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else{
-                                        isBlockGoing = false;
-                                    }
-
-                                }
-
-                                else if(Positions.actualBlockNumber == 1){
-                                    if(Rectangle.isGameOver(lista)){
-                                        isGameOver = true;
-                                    }
-
-                                    else if (Rectangle.canMove(lista)) {
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else if(Positions.positionYBlock < 4){
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else{
-                                        isBlockGoing = false;
-                                    }
-                                }
-
-                                else if(Positions.actualBlockNumber == 2){
-                                    if(BlockT.isGameOver(lista)){
-                                        isGameOver = true;
-                                    }
-
-                                    else if (BlockT.canMove(lista)) {
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else if(Positions.positionYBlock < 4){
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else{
-                                        isBlockGoing = false;
-                                    }
-                                }
-
-                                else if(Positions.actualBlockNumber == 3){
-                                    if(BlockL.isGameOver(lista)){
-                                        isGameOver = true;
-                                    }
-
-                                    else if (BlockL.canMove(lista)) {
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else if(Positions.positionYBlock < 4){
-                                        Positions.positionYBlock++;
-                                    }
-
-                                    else{
-                                        isBlockGoing = false;
-                                    }
-                                }
 
 
                                 runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
+
+                                        if(Positions.actualBlockNumber == 0){
+
+                                            if(Square.isGameOver(lista)){
+                                                isGameOver = true;
+                                            }
+
+                                            else if (Square.canMove(lista)) {
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else if(Positions.positionYBlock < 4){
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else{
+                                                isBlockGoing = false;
+                                            }
+
+                                        }
+
+                                        else if(Positions.actualBlockNumber == 1){
+                                            if(Rectangle.isGameOver(lista)){
+                                                isGameOver = true;
+                                            }
+
+                                            else if (Rectangle.canMove(lista)) {
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else if(Positions.positionYBlock < 4){
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else{
+                                                isBlockGoing = false;
+                                            }
+                                        }
+
+                                        else if(Positions.actualBlockNumber == 2){
+                                            if(BlockT.isGameOver(lista)){
+                                                isGameOver = true;
+                                            }
+
+                                            else if (BlockT.canMove(lista)) {
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else if(Positions.positionYBlock < 4){
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else{
+                                                isBlockGoing = false;
+                                            }
+                                        }
+
+                                        else if(Positions.actualBlockNumber == 3){
+                                            if(BlockL.isGameOver(lista)){
+                                                isGameOver = true;
+                                            }
+
+                                            else if (BlockL.canMove(lista)) {
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else if(Positions.positionYBlock < 4){
+                                                Positions.positionYBlock++;
+                                            }
+
+                                            else{
+                                                isBlockGoing = false;
+                                            }
+                                        }
 
                                         lastYBlockPosition = Positions.positionYBlock;
                                         lastXBlockPosition = Positions.positionXBlock;
@@ -265,6 +267,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case 2:
                         BlockT.onBottomBtn(lista);
+                        break;
+                    case 3: BlockL.onBottomBtn(lista);
                 }
 
 

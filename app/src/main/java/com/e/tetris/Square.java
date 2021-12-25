@@ -91,8 +91,8 @@ public class Square {
     static void onBottomBtn(List<TextView> lista){
         int tempYPosition = Positions.positionYBlock;
 
-        while((tempYPosition < 17 && lista.get((tempYPosition + 3) * Constants.numberOfColumns
-                + Positions.positionXBlock).getBackground() == null && lista.get((tempYPosition + 3) *
+        while((tempYPosition < 18 && lista.get((tempYPosition + 2) * Constants.numberOfColumns
+                + Positions.positionXBlock).getBackground() == null && lista.get((tempYPosition + 2) *
                 Constants.numberOfColumns + Positions.positionXBlock + 1).getBackground() == null)||tempYPosition<4){
 
             tempYPosition++;
@@ -106,13 +106,13 @@ public class Square {
         lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock).setBackgroundResource(0);
         lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1).setBackgroundResource(0);
 
-        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 2 * Constants.numberOfColumns)
-                .setBackgroundResource(R.drawable.zolty);
-        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 2 * Constants.numberOfColumns + 1)
-                .setBackgroundResource(R.drawable.zolty);
         lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
                 .setBackgroundResource(R.drawable.zolty);
         lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                .setBackgroundResource(R.drawable.zolty);
+        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock)
+                .setBackgroundResource(R.drawable.zolty);
+        lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 1)
                 .setBackgroundResource(R.drawable.zolty);
 
 

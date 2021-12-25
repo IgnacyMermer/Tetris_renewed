@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-public class BlockL {
+public class BlockL2 {
 
     static void clearAndColorFields(List<TextView> lista, int lastYBlockPosition, int lastXBlockPosition){
 
@@ -90,26 +90,26 @@ public class BlockL {
         else if(Positions.actualRotation == 3){
             try {
 
-                lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition)
+                lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition - Constants.numberOfColumns)
                         .setBackgroundResource(0);
-                lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + 1)
-                        .setBackgroundResource(0);
-                lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + 2)
+                lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition - Constants.numberOfColumns + 1)
                         .setBackgroundResource(0);
                 lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition - Constants.numberOfColumns + 2)
+                        .setBackgroundResource(0);
+                lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + 2)
                         .setBackgroundResource(0);
 
             } catch (Exception ex2) {
                 Log.i("clearing fields", ex2.getMessage());
             }
 
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+            lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock))
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+            lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + 1))
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
+            lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + 2))
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + 2)
+            lista.get((lastYBlockPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2))
                     .setBackgroundResource(R.drawable.pomaranczowy);
         }
 
@@ -143,8 +143,8 @@ public class BlockL {
         }
 
         else if(Positions.actualRotation == 3 && Positions.positionYBlock < 18 &&
-                lista.get((Positions.positionYBlock + 2) * Constants.numberOfColumns + Positions.positionXBlock).getBackground() == null &&
-                lista.get((Positions.positionYBlock + 2) * Constants.numberOfColumns + Positions.positionXBlock + 1).getBackground() == null &&
+                lista.get((Positions.positionYBlock + 1) * Constants.numberOfColumns + Positions.positionXBlock).getBackground() == null &&
+                lista.get((Positions.positionYBlock + 1) * Constants.numberOfColumns + Positions.positionXBlock + 1).getBackground() == null &&
                 lista.get((Positions.positionYBlock + 2) * Constants.numberOfColumns + Positions.positionXBlock + 2).getBackground() == null){
 
             return true;
@@ -162,7 +162,7 @@ public class BlockL {
 
         if(Positions.actualRotation == 0 && Positions.positionXBlock < 8 &&
                 lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1)
-                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
+                        .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
                 .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
                 + Constants.numberOfColumns + 2).getBackground()==null) {
 
@@ -192,7 +192,7 @@ public class BlockL {
 
         else if(Positions.actualRotation == 1 && Positions.positionXBlock < 7 &&
                 lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 3)
-                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                        .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
                 + Constants.numberOfColumns + 1).getBackground()==null){
 
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
@@ -220,7 +220,7 @@ public class BlockL {
 
         else if(Positions.actualRotation == 2 && Positions.positionXBlock < 8 &&
                 lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 2)
-                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
+                        .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
                 Positions.positionXBlock + 2).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
                 Positions.positionXBlock + Constants.numberOfColumns + 2).getBackground()==null){
 
@@ -249,26 +249,26 @@ public class BlockL {
 
         else if(Positions.actualRotation == 3 && Positions.positionXBlock < 7 &&
                 lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 3)
-                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                        .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
                 + Constants.numberOfColumns + 3).getBackground()==null){
 
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
                     .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
                     .setBackgroundResource(0);
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
                     .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
+                    .setBackgroundResource(0);
 
 
-            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1))
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2))
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 3))
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2))
                     .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 3))
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 3))
                     .setBackgroundResource(R.drawable.pomaranczowy);
 
             Positions.positionXBlock++;
@@ -310,7 +310,7 @@ public class BlockL {
 
         else if(Positions.actualRotation == 1 && Positions.positionXBlock > 0 &&
                 lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1)
-                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
+                        .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
                 + Constants.numberOfColumns - 1).getBackground()==null){
 
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
@@ -338,7 +338,7 @@ public class BlockL {
 
         else if(Positions.actualRotation == 2 && Positions.positionXBlock > 0 &&
                 lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock
-                - Constants.numberOfColumns - 1).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
+                        - Constants.numberOfColumns - 1).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
                 Positions.positionXBlock).getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns +
                 Positions.positionXBlock + Constants.numberOfColumns).getBackground()==null){
 
@@ -366,27 +366,27 @@ public class BlockL {
         }
 
         else if(Positions.actualRotation == 3 && Positions.positionXBlock > 0 &&
-                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns - 1)
-                .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
+                lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+                        .getBackground()==null && lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1)
                 .getBackground()==null){
 
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
                     .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
                     .setBackgroundResource(0);
             lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
                     .setBackgroundResource(0);
+            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
+                    .setBackgroundResource(0);
 
 
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns - 1)
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - 1))
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock))
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1))
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
+            lista.get((Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1))
                     .setBackgroundResource(R.drawable.pomaranczowy);
 
             Positions.positionXBlock--;
@@ -451,24 +451,24 @@ public class BlockL {
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 1)
                     .setBackgroundResource(0);
 
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns)
+            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition)
                     .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 2)
+            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + 1)
                     .setBackgroundResource(R.drawable.pomaranczowy);
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + 2)
+                    .setBackgroundResource(R.drawable.pomaranczowy);
+            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 2)
                     .setBackgroundResource(R.drawable.pomaranczowy);
         }
 
         else if(Positions.actualRotation == 3){
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns)
+            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition)
                     .setBackgroundResource(0);
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(0);
-            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 2)
+            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + 1)
                     .setBackgroundResource(0);
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + 2)
+                    .setBackgroundResource(0);
+            lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition + Constants.numberOfColumns + 2)
                     .setBackgroundResource(0);
 
             lista.get(lastYBlockPosition * Constants.numberOfColumns + lastXBlockPosition - Constants.numberOfColumns)
@@ -483,125 +483,6 @@ public class BlockL {
 
         Positions.actualRotation = Positions.actualRotation == 0 ? 1 : Positions.actualRotation == 1 ? 2 : Positions.actualRotation == 2 ? 3 : 0;
 
-    }
-
-    static void onBottomBtn(List<TextView> lista){
-        int tempYPosition = Positions.positionYBlock;
-
-        if(Positions.actualRotation == 0){
-            while((tempYPosition < 18 && lista.get((tempYPosition + 2) * Constants.numberOfColumns
-                    + Positions.positionXBlock).getBackground() == null && lista.get((tempYPosition + 2) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 1).getBackground() == null) || tempYPosition<4){
-
-                tempYPosition++;
-
-            }
-
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(0);
-
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-        }
-
-        else if(Positions.actualRotation == 1){
-            while((tempYPosition < 18 && lista.get((tempYPosition + 2) * Constants.numberOfColumns
-                    + Positions.positionXBlock).getBackground() == null  && lista.get((tempYPosition + 1) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 1).getBackground() == null && lista.get((tempYPosition + 1) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 2).getBackground() == null)||tempYPosition<4){
-
-                tempYPosition++;
-
-            }
-
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock).setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
-                    .setBackgroundResource(0);
-            lista.get((Positions.positionYBlock + 1) * Constants.numberOfColumns + Positions.positionXBlock)
-                    .setBackgroundResource(0);
-
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 1)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 2)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-        }
-
-        else if(Positions.actualRotation == 2){
-            while((tempYPosition < 18 && lista.get(tempYPosition * Constants.numberOfColumns
-                    + Positions.positionXBlock).getBackground() == null && lista.get((tempYPosition + 2) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 1).getBackground() == null)||tempYPosition<4){
-
-                tempYPosition++;
-
-            }
-
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 1)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(0);
-
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock - Constants.numberOfColumns + 1)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 1)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-        }
-
-        else if(Positions.actualRotation == 3){
-            while((tempYPosition < 18 && lista.get((tempYPosition + 2) * Constants.numberOfColumns
-                    + Positions.positionXBlock).getBackground() == null && lista.get((tempYPosition + 2) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 1).getBackground() == null && lista.get((tempYPosition + 2) * Constants.numberOfColumns
-                    + Positions.positionXBlock + 2).getBackground() == null)||tempYPosition<4){
-
-                tempYPosition++;
-
-            }
-
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + 2)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(0);
-            lista.get(Positions.positionYBlock * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
-                    .setBackgroundResource(0);
-
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + 2)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 1)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-            lista.get(tempYPosition * Constants.numberOfColumns + Positions.positionXBlock + Constants.numberOfColumns + 2)
-                    .setBackgroundResource(R.drawable.pomaranczowy);
-        }
-
-        Positions.positionYBlock = tempYPosition;
     }
 
 }
